@@ -1,11 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import Header from '../components/Header'
-import './index.css'
+import Header from '../components/Header';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
-const TemplateWrapper = ({ children }) => (
+import './index.css';
+
+const TemplateWrapper = ({ children, data }) => (
   <div>
     <Helmet
       title="Gatsby Default Starter"
@@ -24,12 +27,20 @@ const TemplateWrapper = ({ children }) => (
       }}
     >
       {children()}
+      <Contact data={data.contact} />
     </div>
+    <Footer />
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func.isRequired,
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
+
+export const query = graphql`
+  query LayoutQuery {
+    ...contact
+  }
+`;

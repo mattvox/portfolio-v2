@@ -1,5 +1,8 @@
 {
   "extends": "airbnb",
+  "globals": {
+    "graphql": true,
+  },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "jsx-a11y/anchor-is-valid": [ "error", {
@@ -7,5 +10,13 @@
       "specialLink": [ "hrefLeft", "hrefRight", "to" ],
       "aspects": [ "noHref", "invalidHref", "preferButton" ]
     }],
+    "import/core-modules": [ "React" ],
+    "import/no-extraneous-dependencies": [
+      "off",
+      { "peerDependencies": true },
+      { "devDependencies": true },
+      { "dependencies": true }
+    ],
+    "react/no-danger": "off",
   }
 }
