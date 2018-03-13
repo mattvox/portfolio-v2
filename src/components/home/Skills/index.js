@@ -42,6 +42,7 @@ Skills.propTypes = {
     title: PropTypes.string,
     heading: PropTypes.string,
     content: PropTypes.object,
+    skills: PropTypes.array,
   }).isRequired,
 };
 

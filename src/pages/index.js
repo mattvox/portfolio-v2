@@ -2,18 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
-import Landing from '../page-sections/home/Landing';
-import Mission from '../page-sections/home/Mission';
-import Skills from '../page-sections/home/Skills';
+import Landing from '../components/home/Landing';
+import Mission from '../components/home/Mission';
+import Skills from '../components/home/Skills';
+import Projects from '../components/home/Projects';
 
 const IndexPage = ({ data }) => {
   console.log(data);
 
+  const {
+    landing,
+    mission,
+    skills,
+    projects,
+  } = data;
+
   return (
     <div>
-      <Landing data={data.landing} />
-      <Mission data={data.mission} />
-      <Skills data={data.skills} />
+      <Landing data={landing} />
+      <Mission data={mission} />
+      <Skills data={skills} />
+      <Projects data={projects} />
 
       <Link to="/page-2/">Go to page 2</Link>
     </div>
@@ -35,5 +44,6 @@ export const query = graphql`
     ...landing
     ...mission
     ...skills
+    ...projects
   }
 `;

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Header from '../components/Header';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import Header from '../components/ui/Header';
+import Contact from '../components/ui/Contact';
+import Footer from '../components/ui/Footer';
 
 import './index.css';
 
@@ -35,6 +35,7 @@ const TemplateWrapper = ({ children, data }) => (
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func.isRequired,
+  data: PropTypes.object,
 };
 
 export default TemplateWrapper;
