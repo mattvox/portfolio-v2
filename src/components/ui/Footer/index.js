@@ -4,8 +4,8 @@ import Link from 'gatsby-link';
 const Footer = () => (
   <div
     style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
+      background: 'gray',
+      marginBottom: 0,
     }}
   >
     <div
@@ -23,7 +23,7 @@ const Footer = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby!
+          Footer
         </Link>
       </h1>
     </div>

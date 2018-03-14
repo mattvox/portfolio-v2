@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Section from '../../ui/Section';
+import Markdown from '../../ui/Markdown';
+
 const Landing = ({ data }) => {
   const {
     heading,
@@ -8,14 +11,17 @@ const Landing = ({ data }) => {
   } = data;
 
   return (
-    <div>
+    <Section
+      style={{
+        height: 'calc(100vh - 121px)',
+        display: 'flex',
+        alignItems: 'center',
+        textAlign: 'center',
+      }}
+    >
       <h1>{heading}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
-    </div>
+      <Markdown html={html} />
+    </Section>
   );
 };
 

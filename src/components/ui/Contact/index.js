@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Section from '../Section';
+import Markdown from '../Markdown';
+
 const Contact = ({ data }) => {
   const {
     heading,
@@ -8,14 +11,10 @@ const Contact = ({ data }) => {
   } = data;
 
   return (
-    <div>
+    <Section>
       <h1>{heading}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
-    </div>
+      <Markdown html={html} />
+    </Section>
   );
 };
 

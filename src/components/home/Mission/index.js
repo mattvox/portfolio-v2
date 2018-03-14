@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Section from '../../ui/Section';
+import Markdown from '../../ui/Markdown';
+
 const Mission = ({ data }) => {
   const {
     heading,
@@ -8,14 +11,10 @@ const Mission = ({ data }) => {
   } = data;
 
   return (
-    <div>
+    <Section>
       <h1>{heading}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
-    </div>
+      <Markdown html={html} />
+    </Section>
   );
 };
 

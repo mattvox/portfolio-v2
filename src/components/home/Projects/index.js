@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Section from '../../ui/Section';
+import Markdown from '../../ui/Markdown';
+
 const renderProjects = projects => (
   projects.map(project => (
     <div key={project.title}>
       <h4>{project.title}</h4>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: project.description.markdown.html,
-        }}
-      />
+      <Markdown html={project.description.markdown.html} />
     </div>
   ))
 );
@@ -21,10 +20,10 @@ const Projects = ({ data }) => {
   } = data;
 
   return (
-    <div>
+    <Section>
       <h1>{heading}</h1>
       {renderProjects(projects)}
-    </div>
+    </Section>
   );
 };
 

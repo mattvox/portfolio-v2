@@ -1,6 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Section from '../../ui/Section';
+import Markdown from '../../ui/Markdown';
+
+const renderSkills = skills => (
+  skills.map(skill => (
+    <div key={skill.title}>
+      <h4>{skill.heading}</h4>
+      <Markdown html={skill.content.markdown.html} />
+    </div>
+  ))
+);
+
 const Skills = ({ data }) => {
   const {
     heading,
@@ -8,29 +20,12 @@ const Skills = ({ data }) => {
     skills,
   } = data;
 
-  const renderSkills = () => (
-    skills.map(skill => (
-      <div key={skill.title}>
-        <h4>{skill.heading}</h4>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: skill.content.markdown.html,
-          }}
-        />
-      </div>
-    ))
-  );
-
   return (
-    <div>
+    <Section>
       <h1>{heading}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
-      {renderSkills()}
-    </div>
+      <Markdown html={html} />
+      {renderSkills(skills)}
+    </Section>
   );
 };
 

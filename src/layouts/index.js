@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
 import Header from '../components/ui/Header';
 import Contact from '../components/ui/Contact';
@@ -8,37 +9,36 @@ import Footer from '../components/ui/Footer';
 
 import './index.css';
 
+const AppContainer = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+`;
+
 const TemplateWrapper = ({ children, data }) => (
-  <div>
+  <AppContainer>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Matthew Bliffert | Full Stack Developer, Crafter of Digital Things"
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-      <Contact data={data.contact} />
-    </div>
+    {children()}
+    <Contact data={data.contact} />
     <Footer />
-  </div>
+  </AppContainer>
 );
+
+export default TemplateWrapper;
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func.isRequired,
-  data: PropTypes.object,
+  data: PropTypes.shape({
+    contact: PropTypes.object,
+  }).isRequired,
 };
-
-export default TemplateWrapper;
 
 export const query = graphql`
   query LayoutQuery {
