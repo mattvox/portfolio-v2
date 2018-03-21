@@ -1,12 +1,7 @@
-import Link from 'gatsby-link';
+import React from 'react';
 import styled from 'styled-components';
 
-export const HeaderWrapper = styled.section`
-  position: absolute;
-  width: 100%;
-`;
-
-export const LogoWrapper = styled(Link)`
+const LogoWrapper = styled.div`
   width: 90px;
   height: 90px;
   margin: 2rem auto 0;
@@ -16,8 +11,17 @@ export const LogoWrapper = styled(Link)`
   background: lightblue;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 `;
 
-export const Logo = styled.h1`
+const LogoText = styled.h1`
   margin: 0 auto;
 `;
+
+const Logo = () => (
+  <LogoWrapper>
+    <LogoText>M</LogoText>
+  </LogoWrapper>
+);
+
+export default Logo;

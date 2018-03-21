@@ -1,11 +1,16 @@
 import React from 'react';
-import { HeaderWrapper, LogoWrapper, Logo } from './header.styled';
+import styled from 'styled-components';
+
+import Nav from './Nav';
+
+const HeaderWrapper = styled.section`
+  position: absolute;
+  width: 100%;
+`;
 
 const Header = () => (
   <HeaderWrapper>
-    <LogoWrapper to="/">
-      <Logo>M</Logo>
-    </LogoWrapper>
+    <Nav />
   </HeaderWrapper>
 );
 
