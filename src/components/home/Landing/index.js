@@ -13,13 +13,14 @@ const Landing = ({ data }) => {
   return (
     <Section
       style={{
-        height: 'calc(100vh - 121px)',
+        height: '100vh',
         display: 'flex',
         alignItems: 'center',
         textAlign: 'center',
       }}
     >
-      <h1>{heading}</h1>
+
+      <h1 style={{ fontSize: '3rem' }}>{heading}</h1>
       <Markdown html={html} />
     </Section>
   );

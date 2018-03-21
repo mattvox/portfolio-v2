@@ -24,7 +24,9 @@ const TemplateWrapper = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
+
     <Header />
+
     {children()}
     <Contact data={data.contact} />
     <Footer />

@@ -4,7 +4,7 @@ import Link from 'gatsby-link';
 const Footer = () => (
   <div
     style={{
-      background: 'gray',
+      background: 'black',
       marginBottom: 0,
     }}
   >
