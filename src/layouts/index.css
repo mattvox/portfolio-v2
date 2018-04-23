@@ -1,3 +1,9 @@
+#app-root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 /*html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

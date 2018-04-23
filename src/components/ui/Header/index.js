@@ -1,12 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Nav from './Nav';
-
-const HeaderWrapper = styled.section`
-  position: absolute;
-  width: 100%;
-`;
+import { HeaderWrapper } from './Header.styled';
 
 const Header = () => (
   <HeaderWrapper>

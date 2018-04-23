@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const LogoWrapper = styled.div`
+export const LogoWrapper = styled.div`
   width: 90px;
   height: 90px;
   margin: 2rem auto 0;
@@ -14,14 +13,6 @@ const LogoWrapper = styled.div`
   cursor: pointer;
 `;
 
-const LogoText = styled.h1`
+export const LogoText = styled.h1`
   margin: 0 auto;
 `;
-
-const Logo = () => (
-  <LogoWrapper>
-    <LogoText>M</LogoText>
-  </LogoWrapper>
-);
-
-export default Logo;
