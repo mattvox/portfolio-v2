@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Logo from '../Logo';
-import NavMenu from '../NavMenu';
+import NavMenu from './NavMenu';
 import { Overlay, OverlayContent } from './Nav.styled';
 
 class Nav extends React.Component {

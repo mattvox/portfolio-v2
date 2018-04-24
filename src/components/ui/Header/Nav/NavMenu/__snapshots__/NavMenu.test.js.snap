@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavMenu should render correctly 1`] = `
+<styled.div>
+  <Styled(GatsbyLink)
+    to="/"
+  >
+    Home
+  </Styled(GatsbyLink)>
+  <Styled(GatsbyLink)
+    to="/about"
+  >
+    About
+  </Styled(GatsbyLink)>
+  <Styled(GatsbyLink)
+    to="/"
+  >
+    Resume
+  </Styled(GatsbyLink)>
+  <Styled(GatsbyLink)
+    to="/"
+  >
+    Contact
+  </Styled(GatsbyLink)>
+</styled.div>
+`;

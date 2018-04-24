@@ -2,6 +2,11 @@
   "extends": "airbnb",
   "globals": {
     "graphql": true,
+    "describe": true,
+    "it": true,
+    "shallow": true,
+    "expect": true,
+    "shallowToJson": true
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

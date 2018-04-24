@@ -25,14 +25,59 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "es2015",
+          "react"
+        ]
+      }
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "setupFiles": [
+      "./src/test/jest-config.js"
+    ],
+    "modulePaths": [
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "jsx",
+      "js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      ".(js|jsx)": "babel-jest"
+    },
+    "testRegex": "(\\.(test|spec))\\.(jsx|js)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.cache/"
+    ],
+    "testEnvironment": "node"
   },
   "devDependencies": {
+    "babel-jest": "^22.4.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-to-json": "^3.3.3",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "16.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
-    "prettier": "^1.10.2"
+    "jest": "^22.4.3",
+    "prettier": "^1.10.2",
+    "react-test-renderer": "^15.6.1"
   }
 }
